@@ -1,0 +1,125 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Retail Shop</title>
+	<link rel="stylesheet" href="themes/JobSheet1.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+
+	</script>
+    <script type="text/javascript">
+        $("#popupPanel").on({
+            popupbeforeposition: function () {
+                var h = $(window).height();
+
+                $("#popupPanel").css("height", h);
+            }
+        });
+        </script>
+    <style>
+ 
+        #popupPanel-popup {
+            right: 0 !important;
+            left: auto !important;
+}
+#popupPanel {
+    width: 200px;
+    border: 1px solid #000;
+    border-right:none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    margin: 2em 15px;
+}
+    </style>
+</head>
+<body>
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed" >			        
+            <h1>Order Status</h1>                  
+            <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-theme="b" data-inline="true" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+            <div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<button data-theme="a" data-icon="back" data-mini="true">Back</button>
+				<button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
+				<button data-theme="a" data-icon="search" data-mini="true">Search</button>
+			</div>
+            <div data-role="navbar" data-grid="d">
+			<ul>
+				<li><a href="jobsheet.heml" rel="external">Job Sheet</a></li>
+				<li><a href="Service_Engineer.html" rel="external">Service</a></li>
+				<li><a href="Order_Details.html"  rel="external">Order Details</a></li>
+				<li><a href="Order_Status_View.html"  class="ui-btn-active">Status</a></li>
+				<li><a href="#" rel="external">Five</a></li>
+			</ul>
+		</div>
+		</div>
+		<div data-role="content" data-theme="a">		
+	<form>
+		<ul data-role="listview" data-inset="true">
+			<li data-role="fieldcontain">
+	        	<label for="search">Job Id:</label>
+	         	<input type="text" name="password" id="search" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="search">Phone Number:</label>
+	         	<input type="text" name="password" id="search1" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="search">Address:</label>
+	         	<input type="text" name="password" id="search2" value=""   disabled/>
+                <label for="search"  ></label>
+                <input type="text" name="password" id="Text3" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="name">Brand:</label>
+	        	<input type="text" name="name" id="name" value=""   disabled/>
+			</li>
+			<li data-role="fieldcontain">
+	        	<label for="name">Model</label>
+	        	<input type="text" name="name" id="Text1" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="name">Warranty:</label>
+	        	<input type="text" name="name" id="Text2" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="textarea">Problems:</label>
+			<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+			</li>									
+            <li data-role="fieldcontain">
+	        	<label for="textarea">SE Identify:</label>
+			<textarea cols="40" rows="8" name="textarea" id="textarea1"></textarea>
+			</li>								
+            <li data-role="fieldcontain">
+    <fieldset data-role="controlgroup">
+    	<legend>Call Confirm:</legend>
+         	<input type="radio" name="radio-choice-2" id="radio-choice-21" value="choice-1" checked="checked" />
+         	<label for="radio-choice-21">Yes</label>
+
+         	<input type="radio" name="radio-choice-2" id="radio-choice-22" value="choice-2"  />
+         	<label for="radio-choice-22">No</label>         	
+    </fieldset>
+</li>	
+            <li data-role="fieldcontain">
+	        	<label for="name">Estimated Cost:</label>
+	        	<input type="text" name="name" id="Text4" value=""   disabled/>
+			</li>            
+			<li class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+						<div class="ui-block-a"><button type="submit" data-theme="d">Cancel Order</button></div>
+						<div class="ui-block-b"><button type="submit" data-theme="a">Update</button></div>                    		
+			    </fieldset>
+			</li>			
+		</ul>		
+		</form>				
+            </div>
+        <div data-role="footer" data-position="fixed">
+        <h4>Powered By CAS</h4>
+    </div> 	
+        </div>
+</body>
+</html>

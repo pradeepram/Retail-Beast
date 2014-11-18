@@ -1,0 +1,119 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/JobSheet1.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+
+	</script>
+    <script type="text/javascript">
+        $("#popupPanel").on({
+            popupbeforeposition: function () {
+                var h = $(window).height();
+
+                $("#popupPanel").css("height", h);
+            }
+        });
+        </script>
+    <style>
+ 
+        #popupPanel-popup {
+            right: 0 !important;
+            left: auto !important;
+}
+#popupPanel {
+    width: 200px;
+    border: 1px solid #000;
+    border-right:none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    margin: 2em 15px;
+}
+    </style>
+</head>
+<body>
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed" >
+			<h1>Service Dept</h1>
+            <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-theme="b" data-inline="true" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+            <div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<button data-theme="a" data-icon="back" data-mini="true">Back</button>
+				<button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
+				<button data-theme="a" data-icon="search" data-mini="true">Search</button>
+			</div>
+            <div data-role="navbar" data-grid="d">
+			<ul>
+				<li><a href="jobsheet.html" rel="external">Job Sheet</a></li>
+				<li><a href="Service_Engineer.html"  class="ui-btn-active">Service</a></li>
+				<li><a href="Order_Details.html" rel="external">Order Details</a></li>
+				<li><a href="Order_Status_View.html" rel="external">Status</a></li>
+				<li><a href="#" rel="external">Five</a></li>
+			</ul>
+		</div>
+		</div>
+		<div data-role="content" data-theme="a">		
+	<form>
+		<ul data-role="listview" data-inset="true">
+			<li data-role="fieldcontain">
+	        	<label for="search">Job Id:</label>
+	         	<input type="search" name="password" id="search" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="name">Brand:</label>
+	        	<input type="text" name="name" id="name" value=""   disabled/>
+			</li>
+			<li data-role="fieldcontain">
+	        	<label for="name">Model</label>
+	        	<input type="text" name="name" id="Text1" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="name">Warranty:</label>
+	        	<input type="text" name="name" id="Text2" value=""   disabled/>
+			</li>
+            <li data-role="fieldcontain">
+	        	<label for="textarea">Complaints:</label>
+			<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+			</li>									
+            <li data-role="fieldcontain">
+                        
+        <label for="day">Spare Parts</label>
+        <select name="Parts" id="day" multiple="multiple" data-native-menu="false">
+          <option>Parts</option>
+          <option value="mon">Pin</option>
+          <option value="tue">Condensor</option>
+          <option value="wed">War</option>
+          <option value="thu">Glass</option>
+          <option value="fri">Screw</option>
+          <option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select>                       
+                       </li>									
+            <li data-role="fieldcontain">
+	        	<label for="name">Service Charge</label>
+	        	<input type="text" name="name" id="Text3" value=""/>
+			</li>
+            <li data-role="fieldcontain">
+	         <label for="date">Date:</label>
+	         <input type="date" name="date" id="date" value="" />			
+            </li>
+			<li class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+						<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+						<div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div>                    		
+			    </fieldset>
+			</li>			
+		</ul>		
+		</form>				
+            </div>
+        <div data-role="footer" data-position="fixed">
+        <h4>Powered By CAS</h4>
+    </div> 	
+        </div>
+</body>
+</html>

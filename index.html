@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/JobSheet1.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body >
+	<div data-role="page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<h1>LOGIN</h1>            
+		</div>
+		<div data-role="content" data-theme="a" >			
+			<form method='post'>
+                <ul data-role="listview" data-inset="true">
+			<li data-role="fieldcontain">
+    <label for="exampleInputPassword1">UserName</label>
+    <input type="text"  id="exampleInputPassword1">
+  </li>
+                	<li data-role="fieldcontain">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password"  id="Password1" >
+  </li>
+                    
+                    <li class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+						<div class="ui-block-a"><button type="submit" data-theme="d" data-transition="turn">Cancel</button></div>
+						<div class="ui-block-b"><button type="submit" data-theme="a" onClick="location.href = 'jobsheet.html' " data-transition="pop">Submit</button></div>                    		
+			    </fieldset>
+			</li>			
+		</ul>                                         
+			</form>
+    </div>
+        <div data-role="footer" data-position="fixed">
+			<h4>Powered by CAS!</h4>
+		</div>
+		</div>
+</body>
+</html>

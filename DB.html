@@ -1,0 +1,77 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery Mobile: Theme Download</title>
+	<link rel="stylesheet" href="themes/JobSheet1.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+	
+    <script type="text/javascript">
+
+        //add listener when device ready
+        document.addEventListener("deviceready", onDeviceReady, false);
+        var db=""; //will create database Dummy_DB or open it
+
+        //function will be called when device ready
+        function onDeviceReady() {
+            db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+            db.transaction(populateDB, errorCB, successCB);            
+        }
+
+        //create table and insert some record
+        function populateDB(tx) {
+            tx.executeSql('DROP TABLE IF EXISTS SoccerPlayer');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (Name TEXT NOT NULL, Club TEXT NOT NULL)');
+            tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+            tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Van Persie", "Arsenal")');
+        }
+
+        //function will be called when an error occurred
+        function errorCB(err) {
+            alert("Error processing SQL: " + err.code);
+        }
+
+        //function will be called when process succeed
+        function successCB() {
+            alert("success!");
+            db.transaction(queryDB, errorCB);
+        }
+
+        //select all from SoccerPlayer
+        function queryDB(tx) {
+            tx.executeSql('SELECT * FROM SoccerPlayer', [], querySuccess, errorCB);
+        }
+
+        function querySuccess(tx, result) {
+            var playerlist = document.getElementById("SoccerPlayerList");
+            var players = "";
+            alert("The show is on");
+            var len = result.rows.length;
+            for (var i = 0; i < len; i++) {
+                alert(result.rows.item(i).Name + result.rows.item(i).Club);
+                players = players + '<li><a href="#"><p class="record">' + result.rows.item(i).Name + '</p><p class="small">Club ' + result.rows.item(i).Club + '</p></a></li>';
+            }
+
+            playerlist.innerHTML = players;
+            $("#SoccerPlayerList").listview("refresh");
+        }
+        </script>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header" data-position="fixed" data-theme="b">
+    <h1>Soccer Player</h1>
+  </div>
+  <div data-role="content">
+     <ul id="SoccerPlayerList">
+    </ul>
+  </div>
+</div>
+<!--end of Soccer Player Page--->
+</body>
+</html>
